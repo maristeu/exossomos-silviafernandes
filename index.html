@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DermoFios | Regeneração Capilar Avançada com Exossomos</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,600;0,700;1,600&display=swap" rel="stylesheet">
+    
+    <style>
+        /* =========================================
+           DESIGN SYSTEM & VARIÁVEIS GLOBAIS
+           ========================================= */
+        :root {
+            --cor-primaria: #3E4E30; /* Verde Oliva Profundo da Logo */
+            --cor-primaria-escura: #2A3620; /* Tom mais escuro para sombras e contrastes */
+            --cor-secundaria: #C8AC60; /* Dourado Metálico da Logo */
+            --cor-secundaria-hover: #b39952;
+            --cor-fundo-claro: #F9F9F6; /* Off-White Clínico */
+            --cor-texto-escuro: #2C3325; /* Cinza Chumbo para leitura agradável */
+            --cor-texto-claro: #FFFFFF;
+            
+            --fonte-titulos: 'Playfair Display', serif;
+            --fonte-textos: 'Montserrat', sans-serif;
+            
+            --transicao-suave: all 0.3s ease;
+        }
+
+        /* =========================================
+           RESET E ESTILOS BASE
+           ========================================= */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: var(--fonte-textos);
+            color: var(--cor-texto-escuro);
+            background-color: var(--cor-fundo-claro);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* =========================================
+           COMPONENTES: BOTÕES
+           ========================================= */
+        .btn-dourado {
+            display: inline-block;
+            background-color: var(--cor-secundaria);
+            color: var(--cor-primaria-escura);
+            font-family: var(--fonte-textos);
+            font-weight: 700;
+            font-size: 1.1rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            padding: 18px 36px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: var(--transicao-suave);
+            text-decoration: none;
+            box-shadow: 0 4px 15px rgba(200, 172, 96, 0.3);
+        }
+
+        .btn-dourado:hover {
+            background-color: var(--cor-secundaria-hover);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(200, 172, 96, 0.5);
+        }
+
+        /* =========================================
+           SEÇÃO: HERO (PRIMEIRA DOBRA)
+           ========================================= */
+        .hero {
+            position: relative;
+            background-color: var(--cor-primaria);
+            /* Abaixo usamos um gradiente escuro. Depois você pode substituir a URL pela sua imagem 3D de células/folículos */
+            background-image: linear-gradient(rgba(42, 54, 32, 0.85), rgba(42, 54, 32, 0.95)), url('https://images.unsplash.com/photo-1579684385127-1ef15d508118?q=80&w=2000&auto=format&fit=crop');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            color: var(--cor-texto-claro);
+            padding: 100px 0 120px;
+            min-height: 90vh;
+            display: flex;
+            align-items: center;
+            border-bottom: 5px solid var(--cor-secundaria);
+        }
+
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .hero-tag {
+            display: inline-block;
+            background-color: rgba(200, 172, 96, 0.15);
+            color: var(--cor-secundaria);
+            border: 1px solid var(--cor-secundaria);
+            padding: 6px 16px;
+            border-radius: 50px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 24px;
+        }
+
+        .hero h1 {
+            font-family: var(--fonte-titulos);
+            font-size: 3.5rem;
+            line-height: 1.2;
+            margin-bottom: 24px;
+            color: var(--cor-texto-claro);
+        }
+
+        .hero h1 span {
+            color: var(--cor-secundaria);
+            font-style: italic;
+        }
+
+        .hero p {
+            font-size: 1.25rem;
+            font-weight: 400;
+            margin-bottom: 40px;
+            color: rgba(255, 255, 255, 0.9);
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .hero-features {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin-top: 40px;
+            font-size: 0.9rem;
+            color: rgba(255, 255, 255, 0.8);
+        }
+
+        .hero-features span {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .hero-features span::before {
+            content: '✓';
+            color: var(--cor-secundaria);
+            font-weight: bold;
+        }
+
+        /* Responsividade Mobile para Hero */
+        @media (max-width: 768px) {
+            .hero {
+                padding: 80px 0 60px;
+                min-height: auto;
+            }
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+            .hero p {
+                font-size: 1.05rem;
+            }
+            .hero-features {
+                flex-direction: column;
+                gap: 15px;
+                align-items: center;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-tag">Exossomos ASCE+ HRLV</div>
+                
+                <h1>A Verdadeira Regeneração Capilar Começa a <span>Nível Celular.</span></h1>
+                
+                <p>Liberte-se da queda, calvície ou falhas sem procedimentos cirúrgicos. Nossa tecnologia patenteada "desperta" seus folículos com nanovesículas de altíssima eficácia para um preenchimento denso e natural.</p>
+                
+                <button id="btn-abrir-triagem" class="btn-dourado">Agendar Minha Avaliação Premium</button>
+                
+                <div class="hero-features">
+                    <span>Resultados a partir da 3ª sessão</span>
+                    <span>Método 100% Não Invasivo</span>
+                    <span>Tecnologia Patenteada ExoSCRT™</span>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <script>
+        // Espaço reservado para a lógica do formulário de triagem e microinterações
+    </script>
+</body>
+</html>
