@@ -183,6 +183,91 @@
                 gap: 15px;
                 align-items: center;
             }
+        }/* =========================================
+           SEÇÃO 2: AGITAÇÃO DA DOR
+           ========================================= */
+        .dor-section {
+            padding: 100px 0;
+            background-color: var(--cor-fundo-claro);
+            text-align: center;
+        }
+
+        .dor-header {
+            max-width: 800px;
+            margin: 0 auto 60px;
+        }
+
+        .dor-header h2 {
+            font-family: var(--fonte-titulos);
+            font-size: 2.6rem;
+            color: var(--cor-primaria-escura);
+            margin-bottom: 20px;
+            line-height: 1.3;
+        }
+
+        .dor-header p {
+            font-size: 1.15rem;
+            color: #555;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .dor-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .dor-card {
+            background-color: var(--cor-texto-claro); /* Branco */
+            padding: 40px 30px;
+            border-radius: 8px;
+            box-shadow: 0 10px 30px rgba(62, 78, 48, 0.05); /* Sombra com tom da logo */
+            border-top: 3px solid var(--cor-secundaria); /* Detalhe dourado */
+            transition: var(--transicao-suave);
+            text-align: left;
+        }
+
+        .dor-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 15px 40px rgba(62, 78, 48, 0.1);
+        }
+
+        .dor-icone {
+            font-size: 2.2rem;
+            margin-bottom: 20px;
+            display: inline-block;
+            background-color: rgba(200, 172, 96, 0.15); /* Fundo dourado translúcido */
+            padding: 15px;
+            border-radius: 50%;
+        }
+
+        .dor-card h3 {
+            font-family: var(--fonte-textos);
+            font-size: 1.25rem;
+            color: var(--cor-primaria);
+            margin-bottom: 15px;
+            font-weight: 700;
+        }
+
+        .dor-card p {
+            font-size: 0.95rem;
+            color: #666;
+            line-height: 1.6;
+        }
+
+        /* Responsividade da Seção 2 */
+        @media (max-width: 768px) {
+            .dor-section {
+                padding: 70px 0;
+            }
+            .dor-header h2 {
+                font-size: 2rem;
+            }
+            .dor-card {
+                padding: 30px 20px;
+            }
         }
     </style>
 </head>
@@ -203,6 +288,34 @@
                     <span>Resultados a partir da 3ª sessão</span>
                     <span>Método 100% Não Invasivo</span>
                     <span>Tecnologia Patenteada ExoSCRT™</span>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="dor-section">
+        <div class="container">
+            <div class="dor-header">
+                <h2>Você já se frustrou com promessas vazias?</h2>
+                <p>Sabemos que a perda de densidade capilar, falhas na barba e a alopecia afetam diretamente a sua imagem e autoconfiança. E o pior: o mercado está cheio de soluções ultrapassadas.</p>
+            </div>
+
+            <div class="dor-grid">
+                <div class="dor-card">
+                    <div class="dor-icone">💧</div>
+                    <h3>Tratamentos Ineficazes</h3>
+                    <p>Uso prolongado de loções químicas, tônicos e vitaminas genéricas que deixam o couro cabeludo irritado, criam dependência e não entregam o volume real prometido.</p>
+                </div>
+                
+                <div class="dor-card">
+                    <div class="dor-icone">💉</div>
+                    <h3>Procedimentos Dolorosos</h3>
+                    <p>Sessões agressivas de injeções convencionais no couro cabeludo que causam desconforto intenso, inflamação e exigem tempo de recuperação.</p>
+                </div>
+
+                <div class="dor-card">
+                    <div class="dor-icone">✂️</div>
+                    <h3>O Medo da Cirurgia</h3>
+                    <p>O receio compreensível de recorrer a transplantes capilares invasivos, com cortes, cicatrizes, anestesia e um pós-operatório complexo e demorado.</p>
                 </div>
             </div>
         </div>
