@@ -278,6 +278,77 @@
                 padding: 30px 20px;
             }
         }
+        /* =========================================
+           SEÇÃO 3: A REVOLUÇÃO DA CIÊNCIA
+           ========================================= */
+        .ciencia-section {
+            padding: 100px 0;
+            background-color: var(--cor-primaria);
+            color: var(--cor-texto-claro);
+            border-bottom: 2px solid rgba(200, 172, 96, 0.2);
+        }
+
+        .ciencia-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .ciencia-texto h2 {
+            font-family: var(--fonte-titulos);
+            font-size: 2.4rem;
+            color: var(--cor-secundaria); /* Título em Dourado */
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+
+        .ciencia-texto p {
+            font-size: 1.1rem;
+            margin-bottom: 20px;
+            color: rgba(255, 255, 255, 0.9);
+        }
+
+        .ciencia-lista {
+            list-style: none;
+            margin-top: 30px;
+        }
+
+        .ciencia-lista li {
+            position: relative;
+            padding-left: 35px;
+            margin-bottom: 18px;
+            font-weight: 500;
+            font-size: 1.05rem;
+        }
+
+        .ciencia-lista li::before {
+            content: '✦';
+            position: absolute;
+            left: 0;
+            top: -2px;
+            color: var(--cor-secundaria);
+            font-size: 1.4rem;
+        }
+
+        .ciencia-imagem img {
+            width: 100%;
+            border-radius: 12px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+            border: 1px solid rgba(200, 172, 96, 0.3); /* Borda dourada sutil */
+        }
+
+        /* Responsividade para a Seção 3 */
+        @media (max-width: 900px) {
+            .ciencia-container {
+                grid-template-columns: 1fr;
+                gap: 40px;
+                text-align: center;
+            }
+            .ciencia-lista li {
+                text-align: left; /* Mantém a lista alinhada à esquerda mesmo no celular */
+            }
+        }
     </style>
 </head>
 <body>
@@ -335,7 +406,27 @@
             </div>
         </div>
     </section>
-    
+    <section class="ciencia-section">
+        <div class="container ciencia-container">
+            
+            <div class="ciencia-texto">
+                <h2>A Revolução da Ciência: O Poder dos Exossomos</h2>
+                <p>Esqueça tudo o que você sabe sobre tratamentos capilares convencionais. A DermoFios traz para você o ápice da medicina regenerativa com a tecnologia <strong>ExoSCRT™</strong>.</p>
+                <p>Exossomos são poderosas nanovesículas (de 30 a 200nm) responsáveis pela comunicação celular. Eles atuam como "mensageiros inteligentes", enviando sinais diretos para reativar folículos adormecidos e estimular a produção vigorosa de novos fios.</p>
+                
+                <ul class="ciencia-lista">
+                    <li>Fórmula de altíssima pureza, garantindo resultados reais e duradouros.</li>
+                    <li>Restaura a saúde do couro cabeludo, tratando condições como dermatite seborreica.</li>
+                    <li>Ação inovadora que auxilia na repigmentação de fios brancos.</li>
+                </ul>
+            </div>
+
+            <div class="ciencia-imagem">
+                <img src="imagem-exossomos.webp" alt="Representação microscópica da tecnologia de Exossomos">
+            </div>
+
+        </div>
+    </section>
     <script>
         // Espaço reservado para a lógica do formulário de triagem e microinterações
     </script>
