@@ -316,6 +316,95 @@
         .exo-btn-wpp { width: 100%; background: #25D366; color: #fff; padding: 15px; border: none; border-radius: 4px; font-weight: bold; text-transform: uppercase; cursor: pointer; margin-top: 10px; display: flex; align-items: center; justify-content: center; gap: 10px; transition: background 0.2s; }
         .exo-btn-wpp:hover { background: #1ebe5a; }
         .exo-result-screen { text-align: center; }
+/* =========================================
+           SEÇÃO 7: FAQ (PERGUNTAS FREQUENTES)
+           ========================================= */
+        .faq-section {
+            padding: 100px 0;
+            background-color: var(--cor-fundo-claro);
+        }
+
+        .faq-titulo {
+            text-align: center;
+            font-family: var(--fonte-titulos);
+            font-size: 2.6rem;
+            color: var(--cor-primaria-escura);
+            margin-bottom: 50px;
+        }
+
+        .faq-grid {
+            max-width: 800px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        /* Estilo da "caixa" de cada pergunta */
+        .faq-item {
+            background: #fff;
+            border: 1px solid rgba(200, 172, 96, 0.3); /* Borda dourada suave */
+            border-radius: 8px;
+            overflow: hidden;
+            transition: var(--transicao-suave);
+        }
+
+        .faq-item[open] {
+            border-color: var(--cor-secundaria);
+            box-shadow: 0 10px 25px rgba(62, 78, 48, 0.08);
+        }
+
+        /* Estilo da Pergunta Clicável */
+        .faq-pergunta {
+            padding: 25px;
+            font-family: var(--fonte-textos);
+            font-weight: 600;
+            font-size: 1.1rem;
+            color: var(--cor-primaria-escura);
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            list-style: none; /* Remove a setinha padrão do navegador */
+        }
+
+        .faq-pergunta::-webkit-details-marker {
+            display: none; /* Remove a setinha no Safari/Chrome antigo */
+        }
+
+        /* O ícone de + e - customizado */
+        .faq-pergunta::after {
+            content: '+';
+            color: var(--cor-secundaria);
+            font-size: 1.8rem;
+            font-weight: 400;
+            transition: transform 0.3s ease;
+            line-height: 1;
+        }
+
+        .faq-item[open] .faq-pergunta::after {
+            content: '−';
+            transform: rotate(180deg);
+        }
+
+        /* Estilo da Resposta Oculta */
+        .faq-resposta {
+            padding: 0 25px 25px;
+            font-size: 1rem;
+            color: #555;
+            line-height: 1.7;
+            border-top: 1px solid rgba(200, 172, 96, 0.15);
+            margin-top: 5px;
+            padding-top: 20px;
+        }
+
+        @media (max-width: 768px) {
+            .faq-section { padding: 70px 0; }
+            .faq-titulo { font-size: 2rem; }
+            .faq-pergunta { font-size: 1rem; padding: 20px; }
+            .faq-resposta { padding: 0 20px 20px; }
+        }
+        
     </style>
 </head>
 <body>
@@ -461,6 +550,51 @@
                     <img src="antes-depois-cabelo3.webp" alt="Aceleração Folicular">
                     <div class="galeria-legenda">Aceleração de Crescimento</div>
                 </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="faq-section">
+        <div class="container">
+            <h2 class="faq-titulo">Perguntas Frequentes</h2>
+            
+            <div class="faq-grid">
+                
+                <details class="faq-item">
+                    <summary class="faq-pergunta">O procedimento com microagulhamento é doloroso?</summary>
+                    <div class="faq-resposta">
+                        <p>De forma alguma. Nosso foco é a sua experiência premium. O sistema de <em>drug delivery</em> que utilizamos cria microcanais superficiais com altíssima precisão. A grande maioria dos pacientes relata apenas um leve formigamento, tornando a sessão extremamente tolerável e confortável, sem necessidade de tempo de inatividade.</p>
+                    </div>
+                </details>
+
+                <details class="faq-item">
+                    <summary class="faq-pergunta">Em quanto tempo começo a ver os resultados?</summary>
+                    <div class="faq-resposta">
+                        <p>A regeneração celular começa imediatamente após a primeira sessão. No entanto, os resultados visíveis — como o aumento notável da espessura do fio, redução da queda e ganho de densidade — costumam ser observados clinicamente a partir da 3ª sessão do protocolo.</p>
+                    </div>
+                </details>
+
+                <details class="faq-item">
+                    <summary class="faq-pergunta">Qual a diferença deste método para o Minoxidil ou loções comuns?</summary>
+                    <div class="faq-resposta">
+                        <p>Tratamentos convencionais apenas estimulam superficialmente o fluxo sanguíneo e criam dependência química contínua (efeito rebote ao parar). Os <strong>Exossomos (ASCE+ HRLV)</strong> entregam bilhões de nanovesículas que reprogramam e "acordam" as células-tronco do folículo, tratando a raiz do problema de forma estrutural e duradoura.</p>
+                    </div>
+                </details>
+
+                <details class="faq-item">
+                    <summary class="faq-pergunta">Os resultados são definitivos?</summary>
+                    <div class="faq-resposta">
+                        <p>Os Exossomos promovem uma regeneração real e prolongada da saúde folicular. Diferente das loções de uso diário, o resultado se sustenta por muito mais tempo. Após a conclusão do protocolo inicial desenhado pela especialista Silvia Fernandes, indicamos apenas sessões de manutenção espaçadas para preservar o ápice da sua saúde capilar.</p>
+                    </div>
+                </details>
+
+                <details class="faq-item">
+                    <summary class="faq-pergunta">Posso tratar cabelo e barba ao mesmo tempo?</summary>
+                    <div class="faq-resposta">
+                        <p>Sim. A tecnologia patenteada tem ação multifuncional e altíssima afinidade com os folículos pilosos de toda a região da cabeça e rosto. Durante a sua Avaliação Premium, desenharemos um protocolo que abranja exatamente as áreas (cabelo, barba ou sobrancelhas) que você deseja revitalizar.</p>
+                    </div>
+                </details>
+
             </div>
         </div>
     </section>
