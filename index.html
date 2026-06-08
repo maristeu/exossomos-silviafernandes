@@ -349,6 +349,73 @@
                 text-align: left; /* Mantém a lista alinhada à esquerda mesmo no celular */
             }
         }
+        /* =========================================
+           SEÇÃO 4: DIFERENCIAIS TÉCNICOS
+           ========================================= */
+        .diferenciais-section {
+            padding: 100px 0;
+            background-color: var(--cor-fundo-claro);
+        }
+
+        .diferenciais-titulo {
+            text-align: center;
+            font-family: var(--fonte-titulos);
+            font-size: 2.4rem;
+            color: var(--cor-primaria-escura);
+            margin-bottom: 60px;
+        }
+
+        .diferenciais-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+        }
+
+        .diferencial-card {
+            background-color: var(--cor-texto-claro); /* Fundo Branco */
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.03); /* Sombra bem suave */
+            border: 1px solid rgba(200, 172, 96, 0.2); /* Borda dourada leve */
+            transition: var(--transicao-suave);
+        }
+
+        .diferencial-card:hover {
+            border-color: var(--cor-secundaria); /* Borda fica dourada forte ao passar o mouse */
+            transform: translateY(-5px);
+        }
+
+        .diferencial-icone {
+            width: 45px;
+            height: 45px;
+            margin-bottom: 25px;
+            /* Filtro CSS para deixar o ícone (SVG preto) na cor Verde Oliva da paleta */
+            filter: invert(28%) sepia(10%) saturate(1637%) hue-rotate(53deg) brightness(97%) contrast(89%);
+        }
+
+        .diferencial-card h3 {
+            font-family: var(--fonte-titulos);
+            font-size: 1.4rem;
+            color: var(--cor-primaria);
+            margin-bottom: 15px;
+        }
+
+        .diferencial-card p {
+            font-size: 1rem;
+            color: #555;
+            line-height: 1.6;
+        }
+
+        /* Responsividade para a Seção 4 */
+        @media (max-width: 768px) {
+            .diferenciais-section {
+                padding: 70px 0;
+            }
+            .diferenciais-titulo {
+                font-size: 2rem;
+                margin-bottom: 40px;
+            }
+        }
     </style>
 </head>
 <body>
@@ -427,8 +494,36 @@
 
         </div>
     </section>
+
+    <section class="diferenciais-section">
+        <div class="container">
+            <h2 class="diferenciais-titulo">A Excelência em Cada Detalhe do Tratamento</h2>
+            
+            <div class="diferenciais-grid">
+                <div class="diferencial-card">
+                    <img src="icone-velocidade.svg" alt="Ícone de Resultados Rápidos" class="diferencial-icone">
+                    <h3>Aceleração Folicular Visível</h3>
+                    <p>Enquanto métodos antigos demoram meses para mostrar sinais, a altíssima concentração dos nossos exossomos permite observar um aumento notável da densidade e espessura capilar já a partir da 3ª sessão.</p>
+                </div>
+
+                <div class="diferencial-card">
+                    <img src="icone-multifuncao.svg" alt="Ícone de Saúde Capilar" class="diferencial-icone">
+                    <h3>Ação Multifuncional 360º</h3>
+                    <p>O tratamento vai muito além do crescimento. Ele atua na raiz do problema, restaurando a saúde completa do couro cabeludo, tratando dermatite seborreica e auxiliando ativamente na repigmentação de fios brancos.</p>
+                </div>
+
+                <div class="diferencial-card">
+                    <img src="icone-conforto.svg" alt="Ícone de Conforto" class="diferencial-icone">
+                    <h3>[TÍTULO PROVISÓRIO]</h3>
+                    <p>[Espaço reservado para o texto sobre a aplicação. Aguardando sua definição de copy para preencher com alta conversão.]</p>
+                </div>
+            </div>
+        </div>
+    </section>
     <script>
         // Espaço reservado para a lógica do formulário de triagem e microinterações
+
+        
     </script>
 </body>
 </html>
