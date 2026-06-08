@@ -235,12 +235,21 @@
         }
 
         .dor-icone {
-            font-size: 2.2rem;
             margin-bottom: 20px;
-            display: inline-block;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
             background-color: rgba(200, 172, 96, 0.15); /* Fundo dourado translúcido */
-            padding: 15px;
+            width: 70px;
+            height: 70px;
             border-radius: 50%;
+        }
+
+        .dor-icone img {
+            width: 35px; /* Tamanho do ícone dentro do círculo */
+            height: auto;
+            object-fit: contain;
+        }
         }
 
         .dor-card h3 {
@@ -301,19 +310,25 @@
 
             <div class="dor-grid">
                 <div class="dor-card">
-                    <div class="dor-icone">💧</div>
+                    <div class="dor-icone">
+                        <img src="icone-quimica.png" alt="Ícone de tratamentos ineficazes">
+                    </div>
                     <h3>Tratamentos Ineficazes</h3>
                     <p>Uso prolongado de loções químicas, tônicos e vitaminas genéricas que deixam o couro cabeludo irritado, criam dependência e não entregam o volume real prometido.</p>
                 </div>
                 
                 <div class="dor-card">
-                    <div class="dor-icone">💉</div>
+                    <div class="dor-icone">
+                        <img src="icone-agulha.png" alt="Ícone de procedimentos dolorosos">
+                    </div>
                     <h3>Procedimentos Dolorosos</h3>
                     <p>Sessões agressivas de injeções convencionais no couro cabeludo que causam desconforto intenso, inflamação e exigem tempo de recuperação.</p>
                 </div>
 
                 <div class="dor-card">
-                    <div class="dor-icone">✂️</div>
+                    <div class="dor-icone">
+                        <img src="icone-bisturi.png" alt="Ícone de medo da cirurgia">
+                    </div>
                     <h3>O Medo da Cirurgia</h3>
                     <p>O receio compreensível de recorrer a transplantes capilares invasivos, com cortes, cicatrizes, anestesia e um pós-operatório complexo e demorado.</p>
                 </div>
