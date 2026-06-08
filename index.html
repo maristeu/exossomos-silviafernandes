@@ -416,6 +416,76 @@
                 margin-bottom: 40px;
             }
         }
+
+        /* =========================================
+           SEÇÃO 5: A ESPECIALISTA (AUTORIDADE)
+           ========================================= */
+        .autoridade-section {
+            padding: 100px 0;
+            background-color: var(--cor-primaria-escura); /* Fundo verde super escuro/premium */
+            color: var(--cor-texto-claro);
+            border-bottom: 2px solid rgba(200, 172, 96, 0.2);
+        }
+
+        .autoridade-container {
+            display: flex;
+            align-items: center;
+            gap: 80px;
+        }
+
+        .autoridade-imagem {
+            flex: 1;
+            position: relative;
+        }
+
+        /* Efeito de moldura elegante com a cor dourada */
+        .autoridade-imagem img {
+            width: 100%;
+            border-radius: 8px;
+            box-shadow: -20px 20px 0px var(--cor-secundaria);
+            filter: contrast(1.1) brightness(0.95);
+        }
+
+        .autoridade-texto {
+            flex: 1;
+        }
+
+        .autoridade-texto h2 {
+            font-family: var(--fonte-titulos);
+            font-size: 2.6rem;
+            color: var(--cor-secundaria);
+            margin-bottom: 25px;
+            line-height: 1.2;
+        }
+
+        .autoridade-texto p {
+            font-size: 1.1rem;
+            margin-bottom: 20px;
+            color: rgba(255, 255, 255, 0.85);
+            line-height: 1.8;
+        }
+
+        .autoridade-assinatura {
+            font-family: var(--fonte-titulos);
+            font-size: 2rem;
+            font-style: italic;
+            color: var(--cor-secundaria);
+            margin-top: 40px;
+        }
+
+        /* Responsividade para a Seção de Autoridade */
+        @media (max-width: 900px) {
+            .autoridade-container {
+                flex-direction: column;
+                gap: 50px;
+                text-align: center;
+            }
+            .autoridade-imagem img {
+                box-shadow: 0px 20px 0px var(--cor-secundaria); /* Ajuste da sombra para mobile */
+                max-width: 80%;
+                margin: 0 auto;
+            }
+        }
     </style>
 </head>
 <body>
@@ -520,6 +590,29 @@
             </div>
         </div>
     </section>
+
+<section class="autoridade-section">
+        <div class="container autoridade-container">
+            
+            <div class="autoridade-imagem">
+                <img src="foto-silvia-fernandes.webp" alt="Silvia Fernandes - Especialista em Estética Capilar Avançada">
+            </div>
+
+            <div class="autoridade-texto">
+                <h2>Conheça a Especialista por Trás dos Resultados Extraordinários</h2>
+                
+                <p>Com profundo domínio em estética capilar avançada e medicina regenerativa, <strong>Silvia Fernandes</strong> lidera um protocolo exclusivo focado na saúde celular autêntica.</p>
+                
+                <p>Seu método se distancia de soluções paliativas. Ao utilizar a tecnologia patenteada <strong>ExoSCRT™</strong> e o sistema de <em>drug delivery</em> de alta precisão, ela garante a entrega de nanovesículas de altíssima pureza diretamente na derme.</p>
+                
+                <p>O resultado é uma experiência clínica premium, segura e embasada em estudos clínicos, devolvendo não apenas a densidade dos fios, mas a autoestima e a confiança de cada paciente.</p>
+                
+                <div class="autoridade-assinatura">Silvia Fernandes</div>
+            </div>
+
+        </div>
+    </section>
+    
     <script>
         // Espaço reservado para a lógica do formulário de triagem e microinterações
 
