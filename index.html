@@ -486,6 +486,125 @@
                 margin: 0 auto;
             }
         }
+/* =========================================
+           SEÇÃO 6: AUTENTICIDADE E GALERIA DE RESULTADOS
+           ========================================= */
+        .autenticidade-section {
+            background-color: var(--cor-fundo-claro);
+            padding: 80px 0 20px;
+        }
+
+        .autenticidade-box {
+            display: flex;
+            align-items: center;
+            background-color: var(--cor-primaria);
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 15px 40px rgba(62, 78, 48, 0.2);
+        }
+
+        .autenticidade-imagem {
+            flex: 1;
+            min-height: 350px;
+            /* A imagem da luva com o frasco entra aqui no fundo */
+            background-image: url('foto-frasco-asce.webp');
+            background-size: cover;
+            background-position: center;
+        }
+
+        .autenticidade-texto {
+            flex: 1;
+            padding: 50px;
+            color: var(--cor-texto-claro);
+        }
+
+        .autenticidade-texto h3 {
+            font-family: var(--fonte-titulos);
+            font-size: 2rem;
+            color: var(--cor-secundaria);
+            margin-bottom: 15px;
+            line-height: 1.2;
+        }
+
+        .autenticidade-texto p {
+            font-size: 1.05rem;
+            color: rgba(255, 255, 255, 0.9);
+            line-height: 1.7;
+        }
+
+        .galeria-section {
+            padding: 40px 0 100px;
+            background-color: var(--cor-fundo-claro);
+            text-align: center;
+        }
+
+        .galeria-header h2 {
+            font-family: var(--fonte-titulos);
+            font-size: 2.6rem;
+            color: var(--cor-primaria-escura);
+            margin-bottom: 15px;
+        }
+
+        .galeria-header p {
+            font-size: 1.1rem;
+            color: #555;
+            margin-bottom: 50px;
+        }
+
+        .galeria-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+        }
+
+        .galeria-item {
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.08);
+            position: relative;
+            background-color: #fff;
+        }
+
+        .galeria-item img {
+            width: 100%;
+            display: block;
+            transition: var(--transicao-suave);
+        }
+
+        .galeria-item:hover img {
+            transform: scale(1.05); /* Efeito de zoom elegante ao passar o mouse */
+        }
+
+        .galeria-legenda {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background: linear-gradient(transparent, rgba(42, 54, 32, 0.95));
+            color: var(--cor-secundaria); /* Dourado */
+            padding: 30px 20px 15px;
+            font-weight: 600;
+            font-size: 0.95rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            text-align: left;
+        }
+
+        /* Responsividade */
+        @media (max-width: 768px) {
+            .autenticidade-box {
+                flex-direction: column;
+            }
+            .autenticidade-imagem {
+                width: 100%;
+                min-height: 250px;
+            }
+            .autenticidade-texto {
+                padding: 30px 20px;
+                text-align: center;
+            }
+        }
+        
     </style>
 </head>
 <body>
@@ -610,6 +729,48 @@
                 <div class="autoridade-assinatura">Silvia Fernandes</div>
             </div>
 
+        </div>
+    </section>
+<section class="autenticidade-section">
+        <div class="container">
+            <div class="autenticidade-box">
+                <div class="autenticidade-imagem"></div>
+                <div class="autenticidade-texto">
+                    <h3>O Segredo da Nossa Eficácia</h3>
+                    <p>A DermoFios garante a utilização exclusiva do frasco original <strong>ASCE+ HRLV</strong>. Sem diluições, sem paliativos. Cada sessão entrega a carga máxima de bilhões de exossomos puros diretamente na sua derme, justificando a superioridade incontestável dos nossos resultados clínicos.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="galeria-section">
+        <div class="container">
+            <div class="galeria-header">
+                <h2>Resultados Reais. Ciência Comprovada.</h2>
+                <p>Nossa tecnologia não promete, ela regenera. Veja a evolução autêntica dos nossos pacientes.</p>
+            </div>
+            
+            <div class="galeria-grid">
+                <div class="galeria-item">
+                    <img src="antes-depois-cabelo1.webp" alt="Resultado de Densidade Capilar">
+                    <div class="galeria-legenda">Densidade Capilar</div>
+                </div>
+
+                <div class="galeria-item">
+                    <img src="antes-depois-sobrancelha1.webp" alt="Resultado em Sobrancelhas">
+                    <div class="galeria-legenda">Reconstrução de Sobrancelha</div>
+                </div>
+
+                <div class="galeria-item">
+                    <img src="antes-depois-barba.webp" alt="Resultado em Falhas na Barba">
+                    <div class="galeria-legenda">Preenchimento de Barba</div>
+                </div>
+
+                <div class="galeria-item">
+                    <img src="antes-depois-cabelo2.webp" alt="Resultado de Aceleração Folicular">
+                    <div class="galeria-legenda">Aceleração Folicular</div>
+                </div>
+            </div>
         </div>
     </section>
     
