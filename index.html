@@ -604,6 +604,231 @@
                 text-align: center;
             }
         }
+/* =========================================
+           MODAL DE TRIAGEM (FORMULÁRIO)
+           ========================================= */
+        .modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(10, 25, 47, 0.85); /* Fundo escuro translúcido (Azul Meia-Noite) */
+            backdrop-filter: blur(5px);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 1000;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.3s ease;
+        }
+
+        .modal-overlay.ativo {
+            opacity: 1;
+            pointer-events: auto;
+        }
+
+        /* Reutilizando as classes "exo-" do seu código original, mas adaptando o visual */
+        #exo-quiz {
+            background: var(--cor-fundo-claro);
+            padding: 2.5rem;
+            border-radius: 12px;
+            width: 100%;
+            max-width: 600px;
+            box-shadow: 0 24px 64px rgba(0, 0, 0, 0.2);
+            position: relative;
+            transform: translateY(20px);
+            transition: transform 0.3s ease;
+            max-height: 90vh;
+            overflow-y: auto; /* Rolagem interna se a tela for pequena */
+        }
+
+        .modal-overlay.ativo #exo-quiz {
+            transform: translateY(0);
+        }
+
+        .btn-fechar-modal {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            color: var(--cor-texto-escuro);
+            cursor: pointer;
+            transition: color 0.2s;
+        }
+
+        .btn-fechar-modal:hover {
+            color: var(--cor-secundaria);
+        }
+
+        /* --- Estilos internos do Formulário (Adaptados para a Paleta DermoFios) --- */
+        .exo-title {
+            font-family: var(--fonte-titulos);
+            font-size: 2rem;
+            color: var(--cor-primaria-escura);
+            text-align: center;
+            margin-bottom: 0.5rem;
+            line-height: 1.2;
+        }
+        
+        .exo-subtitle {
+            text-align: center;
+            font-size: 0.95rem;
+            color: #555;
+            margin-bottom: 2rem;
+        }
+
+        .exo-progress-bar {
+            height: 4px;
+            background: rgba(200, 172, 96, 0.2);
+            border-radius: 2px;
+            margin-bottom: 1.5rem;
+        }
+
+        .exo-progress-fill {
+            height: 100%;
+            background: var(--cor-secundaria);
+            border-radius: 2px;
+            transition: width 0.3s ease;
+            width: 0%;
+        }
+
+        .exo-q-counter {
+            font-size: 0.8rem;
+            color: var(--cor-secundaria);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+        }
+
+        .exo-q-text {
+            font-family: var(--fonte-titulos);
+            font-size: 1.4rem;
+            color: var(--cor-primaria);
+            margin-bottom: 1.5rem;
+        }
+
+        .exo-options {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .exo-option {
+            padding: 15px;
+            border: 1px solid rgba(0,0,0,0.1);
+            border-radius: 6px;
+            cursor: pointer;
+            transition: all 0.2s;
+            background: #fff;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .exo-option:hover {
+            border-color: var(--cor-secundaria);
+            background: rgba(200, 172, 96, 0.05);
+        }
+
+        .exo-option.exo-selected {
+            border-color: var(--cor-secundaria);
+            background: rgba(200, 172, 96, 0.1);
+            font-weight: 600;
+        }
+
+        .exo-opt-letter {
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            background: rgba(0,0,0,0.05);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.8rem;
+            font-weight: bold;
+        }
+
+        .exo-option.exo-selected .exo-opt-letter {
+            background: var(--cor-secundaria);
+            color: var(--cor-primaria-escura);
+        }
+
+        .exo-quiz-nav {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 2rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid rgba(0,0,0,0.1);
+        }
+
+        .exo-btn-back {
+            background: none;
+            border: none;
+            color: #666;
+            cursor: pointer;
+            font-weight: 500;
+        }
+
+        .exo-btn-next {
+            background: var(--cor-secundaria);
+            color: var(--cor-primaria-escura);
+            padding: 12px 24px;
+            border: none;
+            border-radius: 4px;
+            font-weight: bold;
+            text-transform: uppercase;
+            cursor: pointer;
+            opacity: 0.5;
+            pointer-events: none;
+            transition: all 0.2s;
+        }
+
+        .exo-btn-next.exo-active {
+            opacity: 1;
+            pointer-events: auto;
+        }
+
+        /* --- Estilos da Etapa de Contato --- */
+        .exo-input-group { margin-bottom: 15px; }
+        .exo-input-group label {
+            display: block;
+            font-size: 0.85rem;
+            color: #555;
+            margin-bottom: 5px;
+        }
+        .exo-input-group input, .exo-input-group select {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-family: var(--fonte-textos);
+            font-size: 1rem;
+        }
+        .exo-btn-wpp {
+            width: 100%;
+            background: #25D366;
+            color: #fff;
+            padding: 15px;
+            border: none;
+            border-radius: 4px;
+            font-weight: bold;
+            text-transform: uppercase;
+            cursor: pointer;
+            margin-top: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            transition: background 0.2s;
+        }
+        .exo-btn-wpp:hover { background: #1ebe5a; }
+        
+        .exo-result-screen { text-align: center; }
         
     </style>
 </head>
@@ -786,9 +1011,262 @@
     </section>
     
     <script>
-        // Espaço reservado para a lógica do formulário de triagem e microinterações
+        // --- FUNÇÕES DO MODAL ---
+        const modalTriagem = document.getElementById('modal-triagem');
+        const btnAbrirTriagem = document.getElementById('btn-abrir-triagem');
 
-        
+        // Abre o modal quando o botão principal é clicado
+        btnAbrirTriagem.addEventListener('click', function() {
+            modalTriagem.classList.add('ativo');
+        });
+
+        function fecharModal() {
+            modalTriagem.classList.remove('ativo');
+        }
+
+        // --- CONFIGURAÇÕES DO QUIZ ---
+        const EXO_WHATSAPP = '5511999999999'; // Substitua pelo seu número real
+        const EXO_SHEET_URL = 'COLE_A_URL_DO_SEU_APPS_SCRIPT_AQUI'; // Substitua pela sua URL real
+
+        const EXO_QUESTIONS = [
+            {
+                text: "Há quanto tempo você está notando queda ou falhas?",
+                options: [
+                    { text: "Menos de 6 meses", score: 10 },
+                    { text: "Entre 6 meses e 2 anos", score: 20 },
+                    { text: "Entre 2 e 5 anos", score: 15 },
+                    { text: "Mais de 5 anos", score: 8 }
+                ],
+                weight: 1.5
+            },
+            {
+                text: "Como você classificaria a intensidade da queda atualmente?",
+                options: [
+                    { text: "Leve — percebo mais fios no travesseiro/escova", score: 20 },
+                    { text: "Moderada — área visivelmente mais rala", score: 18 },
+                    { text: "Intensa — falhas claras ou calvície avançando", score: 12 },
+                    { text: "Muito intensa — área totalmente calva", score: 5 }
+                ],
+                weight: 1.5
+            },
+            {
+                text: "Você já realizou algum tratamento capilar antes?",
+                options: [
+                    { text: "Nunca fiz nenhum tratamento", score: 20 },
+                    { text: "Fiz uso de minoxidil ou similar", score: 16 },
+                    { text: "Fiz transplante capilar", score: 10 },
+                    { text: "Fiz outros procedimentos estéticos", score: 14 }
+                ],
+                weight: 1
+            },
+            {
+                text: "Qual área você deseja tratar?",
+                options: [
+                    { text: "Cabelos — couro cabeludo", score: 20 },
+                    { text: "Barba — regiões ralas ou falhas", score: 20 },
+                    { text: "Sobrancelhas — regiões finas", score: 18 },
+                    { text: "Mais de uma área", score: 20 }
+                ],
+                weight: 1
+            },
+            {
+                text: "Como você avalia sua disposição para investir em resultados duradouros?",
+                options: [
+                    { text: "Quero o melhor — invisto no que funciona", score: 20 },
+                    { text: "Estou aberto(a) se o custo-benefício for claro", score: 16 },
+                    { text: "Preciso pensar melhor no orçamento", score: 10 },
+                    { text: "Só se for muito acessível", score: 5 }
+                ],
+                weight: 1.5
+            },
+            {
+                text: "O que motivaria você a agendar uma avaliação presencial hoje?",
+                options: [
+                    { text: "Já estou decidido(a) — quero começar logo", score: 20 },
+                    { text: "Preciso ver resultados reais antes", score: 14 },
+                    { text: "Quero entender melhor o processo", score: 12 },
+                    { text: "Estou só pesquisando por enquanto", score: 6 }
+                ],
+                weight: 1.5
+            }
+        ];
+
+        let exoCurrent = 0;
+        let exoAnswers = [];
+        let exoClientMsg = '';
+
+        function exoRender() {
+            const q = EXO_QUESTIONS[exoCurrent];
+            const total = EXO_QUESTIONS.length;
+            document.getElementById('exoQCounter').textContent = `Pergunta ${exoCurrent + 1} de ${total}`;
+            document.getElementById('exoQText').textContent = q.text;
+            document.getElementById('exoProgressFill').style.width = `${(exoCurrent / total) * 100}%`;
+            document.getElementById('exoBtnBack').style.visibility = exoCurrent === 0 ? 'hidden' : 'visible';
+            document.getElementById('exoBtnNext').classList.remove('exo-active');
+
+            const letters = ['A', 'B', 'C', 'D'];
+            document.getElementById('exoQOptions').innerHTML = q.options.map((o, i) => `
+                <div class="exo-option" onclick="exoSelect(this,${i})" data-i="${i}">
+                    <span class="exo-opt-letter">${letters[i]}</span>${o.text}
+                </div>`).join('');
+
+            if (exoAnswers[exoCurrent] !== undefined) {
+                const opts = document.querySelectorAll('.exo-option');
+                opts[exoAnswers[exoCurrent]].classList.add('exo-selected');
+                opts[exoAnswers[exoCurrent]].querySelector('.exo-opt-letter').textContent = '✓';
+                document.getElementById('exoBtnNext').classList.add('exo-active');
+            }
+        }
+
+        window.exoSelect = function(el, idx) {
+            document.querySelectorAll('.exo-option').forEach((o, i) => {
+                o.classList.remove('exo-selected');
+                o.querySelector('.exo-opt-letter').textContent = ['A', 'B', 'C', 'D'][i];
+            });
+            el.classList.add('exo-selected');
+            el.querySelector('.exo-opt-letter').textContent = '✓';
+            exoAnswers[exoCurrent] = idx;
+            document.getElementById('exoBtnNext').classList.add('exo-active');
+        };
+
+        window.exoNext = function() {
+            if (exoAnswers[exoCurrent] === undefined) return;
+            exoCurrent++;
+            if (exoCurrent < EXO_QUESTIONS.length) {
+                exoRender();
+            } else {
+                document.getElementById('exoProgressFill').style.width = '100%';
+                document.getElementById('exoQuestionStep').style.display = 'none';
+                document.getElementById('exoContactStep').style.display = 'block';
+            }
+        };
+
+        window.exoPrev = function() {
+            if (exoCurrent > 0) { exoCurrent--; exoRender(); }
+        };
+
+        function exoCalcScore() {
+            let s = 0;
+            EXO_QUESTIONS.forEach((q, i) => {
+                if (exoAnswers[i] !== undefined) s += q.options[exoAnswers[i]].score * q.weight;
+            });
+            const max = EXO_QUESTIONS.reduce((a, q) => a + 20 * q.weight, 0);
+            return Math.round((s / max) * 100);
+        }
+
+        function exoClassify(score) {
+            if (score >= 75) return { label: '🔥 PRIORIDADE ALTA', tag: 'QUENTE' };
+            if (score >= 50) return { label: '🌡️ PRIORIDADE MÉDIA', tag: 'MORNO' };
+            return { label: '❄️ PRIORIDADE BAIXA', tag: 'FRIO' };
+        }
+
+        window.exoSend = function() {
+            const nome = document.getElementById('exoNome').value.trim() || 'Não informado';
+            const wpp = document.getElementById('exoWpp').value.trim() || 'Não informado';
+            const area = document.getElementById('exoArea').value;
+            const score = exoCalcScore();
+            const cls = exoClassify(score);
+
+            exoClientMsg = encodeURIComponent(
+                `Olá! Me chamo *${nome}* e acabei de preencher a avaliação de perfil no site.\n\n` +
+                `Tenho interesse no tratamento de *Exossomos* para *${area}* e gostaria de saber mais sobre como funciona e os próximos passos.\n\n` +
+                `Aguardo o contato da especialista. Obrigado(a)!`
+            );
+
+            if (EXO_SHEET_URL && EXO_SHEET_URL !== 'COLE_A_URL_DO_SEU_APPS_SCRIPT_AQUI') {
+                fetch(EXO_SHEET_URL, {
+                    method: 'POST',
+                    mode: 'no-cors',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({
+                        nome, whatsapp: wpp, area, score,
+                        classificacao: cls.label,
+                        respostas: EXO_QUESTIONS.map((q, i) =>
+                            exoAnswers[i] !== undefined ? q.options[exoAnswers[i]].text : ''
+                        )
+                    })
+                }).catch(() => {});
+            }
+
+            const texts = {
+                high: { h: 'Seu perfil é muito promissor.', m: 'Com base nas suas respostas, o tratamento com Exossomos tem grande potencial para o seu caso. Nossa especialista vai entrar em contato em breve com um plano personalizado.' },
+                medium: { h: 'Sua jornada pode começar agora.', m: 'Analisamos seu perfil e acreditamos que vale uma conversa mais detalhada. Nossa especialista vai entrar em contato para entender melhor suas expectativas.' },
+                low: { h: 'Obrigado pela sua confiança.', m: 'Recebemos suas respostas. Nossa equipe entrará em contato com informações e conteúdos que podem ajudar você a entender melhor o tratamento.' }
+            };
+            const t = texts[score >= 75 ? 'high' : score >= 50 ? 'medium' : 'low'];
+
+            document.getElementById('exoContactStep').style.display = 'none';
+            document.getElementById('exoResultScreen').style.display = 'block';
+            document.getElementById('exoResultHeadline').textContent = t.h;
+            document.getElementById('exoResultMsg').textContent = t.m;
+        };
+
+        window.exoOpenWpp = function() {
+            window.open(`https://wa.me/${EXO_WHATSAPP}?text=${exoClientMsg}`, '_blank');
+        };
+
+        // Inicia o quiz
+        exoRender();
     </script>
+<div class="modal-overlay" id="modal-triagem">
+        <section id="exo-quiz">
+            <button class="btn-fechar-modal" onclick="fecharModal()">✕</button>
+
+            <h2 class="exo-title">Avaliação de Perfil</h2>
+            <p class="exo-subtitle">Responda 6 perguntas rápidas para receber uma análise personalizada.</p>
+
+            <div class="exo-progress-bar">
+                <div class="exo-progress-fill" id="exoProgressFill"></div>
+            </div>
+
+            <div id="exoQuestionStep">
+                <div class="exo-q-counter" id="exoQCounter">Pergunta 1 de 6</div>
+                <div class="exo-q-text" id="exoQText"></div>
+                <div class="exo-options" id="exoQOptions"></div>
+                <div class="exo-quiz-nav">
+                    <button class="exo-btn-back" id="exoBtnBack" onclick="exoPrev()">← Voltar</button>
+                    <button class="exo-btn-next" id="exoBtnNext" onclick="exoNext()">Continuar →</button>
+                </div>
+            </div>
+
+            <div class="exo-contact-step" id="exoContactStep" style="display: none;">
+                <div class="exo-q-counter">Última etapa</div>
+                <div class="exo-q-text">Ótimo perfil! Onde enviamos sua avaliação?</div>
+
+                <div class="exo-input-group">
+                    <label>Nome completo</label>
+                    <input type="text" id="exoNome" placeholder="Seu nome">
+                </div>
+                <div class="exo-input-group">
+                    <label>WhatsApp</label>
+                    <input type="tel" id="exoWpp" placeholder="(11) 99999-9999">
+                </div>
+                <div class="exo-input-group">
+                    <label>Área de interesse</label>
+                    <select id="exoArea">
+                        <option value="Cabelos">Cabelos</option>
+                        <option value="Barba">Barba</option>
+                        <option value="Sobrancelhas">Sobrancelhas</option>
+                        <option value="Cabelos e Barba">Cabelos e Barba</option>
+                        <option value="Todos os tratamentos">Todos os tratamentos</option>
+                    </select>
+                </div>
+
+                <button class="exo-btn-wpp" onclick="exoSend()">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+                    Enviar para análise gratuita
+                </button>
+            </div>
+
+            <div class="exo-result-screen" id="exoResultScreen" style="display: none;">
+                <h3 class="exo-title" id="exoResultHeadline" style="font-size: 1.8rem; margin-top:20px;">Seu perfil foi analisado.</h3>
+                <p class="exo-subtitle" id="exoResultMsg"></p>
+                <button class="exo-btn-wpp" onclick="exoOpenWpp()">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+                    Falar com a especialista agora
+                </button>
+            </div>
+        </section>
+    </div>
 </body>
 </html>
