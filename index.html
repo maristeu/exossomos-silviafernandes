@@ -404,6 +404,65 @@
             .faq-pergunta { font-size: 1rem; padding: 20px; }
             .faq-resposta { padding: 0 20px 20px; }
         }
+/* =========================================
+           SEÇÃO 8: RODAPÉ (FOOTER) FINAL
+           ========================================= */
+        .footer-section {
+            background-color: var(--cor-primaria-escura);
+            color: var(--cor-texto-claro);
+            padding: 80px 0 30px;
+            text-align: center;
+        }
+
+        .footer-cta {
+            margin-bottom: 60px;
+            padding-bottom: 60px;
+            border-bottom: 1px solid rgba(200, 172, 96, 0.2);
+        }
+
+        .footer-cta h2 {
+            font-family: var(--fonte-titulos);
+            font-size: 2.5rem;
+            color: var(--cor-secundaria);
+            margin-bottom: 20px;
+        }
+
+        .footer-cta p {
+            font-size: 1.1rem;
+            color: rgba(255, 255, 255, 0.8);
+            margin-bottom: 30px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .footer-info {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 15px;
+            font-size: 0.9rem;
+            color: rgba(255, 255, 255, 0.6);
+        }
+
+        .footer-logo {
+            font-family: var(--fonte-titulos);
+            font-size: 1.8rem;
+            color: var(--cor-secundaria);
+            font-weight: 700;
+            letter-spacing: 1px;
+            margin-bottom: 10px;
+        }
+
+        .footer-copy {
+            margin-top: 30px;
+            font-size: 0.8rem;
+            color: rgba(255, 255, 255, 0.4);
+        }
+
+        @media (max-width: 768px) {
+            .footer-cta h2 { font-size: 2rem; }
+        }
         
     </style>
 </head>
@@ -598,7 +657,30 @@
             </div>
         </div>
     </section>
+<footer class="footer-section">
+        <div class="container">
+            
+            <div class="footer-cta">
+                <h2>Pronto para Transformar sua Autoestima?</h2>
+                <p>Não adie mais o resultado que a ciência já pode te entregar. Agende sua avaliação e descubra o protocolo ideal para você.</p>
+                
+                <button onclick="document.getElementById('modal-triagem').classList.add('ativo')" class="btn-dourado">Agendar Minha Avaliação Premium</button>
+            </div>
 
+            <div class="footer-info">
+                <div class="footer-logo">DermoFios</div>
+                <p>Clínica de Estética Capilar Avançada e Medicina Regenerativa</p>
+                <p>Responsável Técnica: Silvia Fernandes</p>
+                <p>📍 [Insira o Endereço da Clínica Aqui]</p>
+            </div>
+
+            <div class="footer-copy">
+                &copy; 2026 DermoFios. Todos os direitos reservados.
+            </div>
+
+        </div>
+    </footer>
+    
     <div class="modal-overlay" id="modal-triagem">
         <section id="exo-quiz">
             <button class="btn-fechar-modal" onclick="fecharModal()">✕</button>
